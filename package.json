@@ -16,6 +16,7 @@
     "crystal:list-funcs": "ts-node cli-implementations/js/crystallizationManager.ts list-funcs",
     "crystal:goal": "ts-node cli-implementations/js/crystallizationManager.ts goal",
     "crystal:api": "ts-node src/apiServer.ts",
+    "crystal:auto-update": "ts-node scripts/auto_update_repos.ts",
     "test": "ts-node tests/update_badge.test.ts",
     "lint": "eslint \"**/*.ts\"",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",

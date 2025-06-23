@@ -44,3 +44,4 @@
 - [x] Optimize list-funcs using caching
 - [x] Add unit tests for key functions
 - [ ] Follow yearly action plan from `CORE.md`
+- [x] Implement auto-update script for outdated repos via GitHub API
