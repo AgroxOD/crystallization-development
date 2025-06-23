@@ -17,3 +17,4 @@
 - Run `npm run lint` and `npm run format` before committing changes.
 - Commit messages should follow the Conventional Commits style; commitlint will enforce it.
 - Keep `package-lock.json` synced with `package.json` by running `npm install` whenever dependencies change.
+- See `docs/future_recommendations_ru.md` for long-term ideas.
