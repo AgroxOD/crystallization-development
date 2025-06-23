@@ -70,6 +70,16 @@ def average(args):
     print(f"{avg:.2f}")
 
 
+def list_diamonds(args):
+    data = load_data()
+    diamonds = [t for t in data['tasks'] if t.get('status') == 'diamond']
+    if not diamonds:
+        print('No diamond tasks')
+        return
+    for t in diamonds:
+        print(f"{t['id']}: {t['title']}")
+
+
 def init_repo(args):
     if DATA_FILE.exists():
         print('crystallization.json already exists')
@@ -112,6 +122,9 @@ core.set_defaults(func=update_core)
 
 avg = sub.add_parser('average')
 avg.set_defaults(func=average)
+
+ld = sub.add_parser('list-diamonds')
+ld.set_defaults(func=list_diamonds)
 
 init_p = sub.add_parser('init')
 init_p.set_defaults(func=init_repo)

@@ -7,6 +7,7 @@
 - Encourage new CLI implementations in `cli-implementations/` for other languages.
 - A minimal Bash script is available as an experimental example.
 - New command `list-funcs` scans repository functions once and stores the most common result in `most_common_function.txt`.
+- New command `list-diamonds` lists all tasks with `diamond` status.
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.

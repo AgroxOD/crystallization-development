@@ -100,3 +100,9 @@
 ### Fixed
 
 - Regenerated `package-lock.json` to include dev dependencies so `npm ci` works consistently
+
+## [0.3.11] - 2025-10-28
+
+### Added
+
+- `list-diamonds` command in JS and Python CLIs to show all diamond tasks
