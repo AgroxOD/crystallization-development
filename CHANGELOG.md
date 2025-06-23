@@ -26,3 +26,7 @@
 - Diamond KPI concept with threshold checking
 - Updated TypeScript CLI to mark tasks as `diamond`
 - Expanded `crystallization.json` with metric values and thresholds
+
+## [0.3.1] - 2025-08-05
+### Added
+- `crystal:init` command to bootstrap crystallization in any repo

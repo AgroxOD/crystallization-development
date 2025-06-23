@@ -8,7 +8,8 @@
     "crystal:kpi": "ts-node cli-implementations/js/crystallizationManager.ts update-kpi",
     "crystal:level": "ts-node cli-implementations/js/crystallizationManager.ts level",
     "crystal:core": "ts-node cli-implementations/js/crystallizationManager.ts update-core",
-    "crystal:avg": "ts-node cli-implementations/js/crystallizationManager.ts average"
+    "crystal:avg": "ts-node cli-implementations/js/crystallizationManager.ts average",
+    "crystal:init": "ts-node cli-implementations/js/crystallizationManager.ts init"
   },
   "author": "Krishna Narayana",
   "license": "MIT",

@@ -160,6 +160,32 @@ yargs(hideBin(process.argv))
     const avg = scores.reduce((a, b) => a + b, 0) / (scores.length || 1);
     console.log(avg.toFixed(2));
   })
+  .command(
+    'init',
+    'Initialize crystallization in current repo',
+    () => {},
+    () => {
+      const target = path.resolve(process.cwd(), 'crystallization.json');
+      if (fs.existsSync(target)) {
+        console.error('crystallization.json already exists');
+        return;
+      }
+      const template: Data = {
+        core_version: 1,
+        core_principles: [
+          'Iterative improvement',
+          'KPI-driven development'
+        ],
+        tasks: [],
+        kpi_definitions: [
+          { key: 'cycle_time_days', title: 'Cycle Time (days)', threshold: 3 },
+          { key: 'code_coverage', title: 'Code Coverage', threshold: 0.8 }
+        ]
+      };
+      fs.writeFileSync(target, JSON.stringify(template, null, 2));
+      console.log('Initialized crystallization.json');
+    }
+  )
   .demandCommand()
   .help()
   .strict()

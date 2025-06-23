@@ -70,6 +70,24 @@ def average(args):
     print(f"{avg:.2f}")
 
 
+def init_repo(args):
+    if DATA_FILE.exists():
+        print('crystallization.json already exists')
+        return
+    template = {
+        'core_version': 1,
+        'core_principles': ['Iterative improvement', 'KPI-driven development'],
+        'kpi_definitions': [
+            {'key': 'cycle_time_days', 'title': 'Cycle Time (days)', 'threshold': 3},
+            {'key': 'code_coverage', 'title': 'Code Coverage', 'threshold': 0.8}
+        ],
+        'tasks': []
+    }
+    with open(DATA_FILE, 'w', encoding='utf-8') as f:
+        json.dump(template, f, ensure_ascii=False, indent=2)
+    print('Initialized crystallization.json')
+
+
 parser = argparse.ArgumentParser(description='Crystallization CLI (Python)')
 sub = parser.add_subparsers(dest='command')
 
@@ -94,6 +112,9 @@ core.set_defaults(func=update_core)
 
 avg = sub.add_parser('average')
 avg.set_defaults(func=average)
+
+init_p = sub.add_parser('init')
+init_p.set_defaults(func=init_repo)
 
 args = parser.parse_args()
 if hasattr(args, 'func'):
