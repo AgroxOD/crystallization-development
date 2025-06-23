@@ -76,7 +76,6 @@
 
 - `crystal:sync` script to synchronize `crystallization.json` with `.vscode` for IDE integration
 
-
 ## [0.3.7] - 2025-09-23
 
 ### Added
@@ -85,6 +84,13 @@
 - Husky hooks with lint-staged and commitlint
 
 ## [0.3.8] - 2025-10-01
+
 ### Added
+
 - Инструкция по интеграции методологии в другие репозитории и IDE
 
+## [0.3.9] - 2025-10-15
+
+### Changed
+
+- `list-funcs` command reworked to scan files once, improving performance
