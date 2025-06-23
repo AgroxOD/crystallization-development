@@ -4,7 +4,7 @@
 - [ ] Implement additional features
 - [x] Implement Diamond state and KPI thresholds
 - [x] Document badge update process in README
-- [ ] Automate badge refresh via GitHub Actions
+- [x] Automate badge refresh via GitHub Actions
 - [ ] Define universal `crystallization.json` format
 - [x] Provide reference CLI for Python
 - [x] Provide reference CLI for Bash
