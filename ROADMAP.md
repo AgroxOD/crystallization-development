@@ -15,3 +15,4 @@
 - [ ] Add `list-funcs` command to analyze repository functions
 - [x] Provide `crystal:update-badge` script for automatic README badge refresh
 - [x] Provide `crystal:sync` script to synchronize `crystallization.json` with IDE
+- [x] Document integration steps for other repositories and IDEs

@@ -10,5 +10,6 @@
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.
+- Use `create_env_from_exports.sh` to generate a `.env` file when environment exports are required.
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
 - This PR demonstrates a 10-iteration improvement loop with KPI tracking.

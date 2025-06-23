@@ -92,6 +92,14 @@
 
 Запусти `npm run crystal:init` в корне любого проекта, чтобы создать базовый файл `crystallization.json` и начать отслеживать уровень зрелости задач.
 
+### Интеграция с IDE
+
+1. Скопируй папку `cli-implementations/` или добавь этот репозиторий как `git submodule`.
+2. Запусти `npm install` для установки зависимостей и `npm run crystal:init` для генерации стартового `crystallization.json`.
+3. Если необходимо использовать переменные окружения, сгенерируй `.env` из файла экспортов командой `./scripts/create_env_from_exports.sh exports.sh`.
+4. Используй `npm run crystal:sync` для синхронизации `crystallization.json` с файлом `.vscode/crystallization.json` внутри IDE.
+5. Продолжай пользоваться командами `crystal:*` для обновления KPI и уровня кристаллизации.
+
 
 ---
 
