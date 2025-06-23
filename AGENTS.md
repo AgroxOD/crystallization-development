@@ -13,3 +13,5 @@
 - Use `create_env_from_exports.sh` to generate a `.env` file when environment exports are required.
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
 - This PR demonstrates a 10-iteration improvement loop with KPI tracking.
+- Run `npm run lint` and `npm run format` before committing changes.
+- Commit messages should follow the Conventional Commits style; commitlint will enforce it.

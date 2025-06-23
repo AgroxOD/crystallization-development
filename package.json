@@ -12,7 +12,10 @@
     "crystal:init": "ts-node cli-implementations/js/crystallizationManager.ts init",
     "crystal:update-badge": "ts-node scripts/update_badge.ts",
     "crystal:sync": "ts-node scripts/sync_crystallization.ts",
-    "crystal:list-funcs": "ts-node cli-implementations/js/crystallizationManager.ts list-funcs"
+    "crystal:list-funcs": "ts-node cli-implementations/js/crystallizationManager.ts list-funcs",
+    "lint": "eslint \"**/*.ts\"",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "prepare": "husky install"
   },
   "author": "Krishna Narayana",
   "license": "MIT",
@@ -20,6 +23,23 @@
     "@types/yargs": "^17.0.33",
     "ts-node": "^10.9.1",
     "typescript": "^5.4.0",
-    "yargs": "^17.7.2"
+    "yargs": "^17.7.2",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "prettier": "^3.2.5",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix"
+    ],
+    "*.{ts,js,json,md}": [
+      "prettier --write"
+    ]
   }
 }
