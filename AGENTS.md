@@ -5,8 +5,8 @@
 - Keep the badge in `README.md` up to date using the result of `npm run crystal:avg`.
 - Use `npm run crystal:update-badge` to automatically refresh the README badge.
 - Encourage new CLI implementations in `cli-implementations/` for other languages.
-- A minimal Bash script is available as an experimental example.
-- New command `list-funcs` scans repository functions once and stores the most common result in `most_common_function.txt`.
+- A minimal Bash script is available as an experimental example; reference CLI for Bash completed.
+- New command `list-funcs` now caches results for faster repeated runs and stores the most common function in `most_common_function.txt`.
 - New command `list-diamonds` lists all tasks with `diamond` status.
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
@@ -15,6 +15,7 @@
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
 - This PR demonstrates a 10-iteration improvement loop with KPI tracking.
 - Run `npm run lint` and `npm run format` before committing changes.
+- Run `npm test` to execute unit tests before submitting a PR.
 - Commit messages should follow the Conventional Commits style; commitlint will enforce it.
 - Keep `package-lock.json` synced with `package.json` by running `npm install` whenever dependencies change.
 - See `docs/future_recommendations_ru.md` for long-term ideas.

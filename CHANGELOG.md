@@ -122,3 +122,14 @@
 - Repository crystallization level increased to 100%
 - README badge and summary updated automatically
 - Added roadmap milestone for reaching 95% crystallization
+
+## [0.3.14] - 2025-11-01
+
+### Added
+
+- Caching for `list-funcs` command with single-pass scanning
+- Basic unit test for `calcAverage`
+
+### Changed
+
+- ROADMAP updated to reflect completed tasks
