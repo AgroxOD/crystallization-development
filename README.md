@@ -132,6 +132,18 @@ CLI и веб‑клиент. Такая модульность позволит
 
 ---
 
+## REST API Integration
+
+Запустите локальный REST API сервер командой:
+
+```bash
+npm run crystal:api
+```
+
+Пример обращения к API приведён в `scripts/api_integration_example.ts`. Его можно адаптировать для подключения кристаллизации в сторонние проекты.
+
+---
+
 ## 🙋‍♀️ Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding new features and CLI implementations in other languages.
