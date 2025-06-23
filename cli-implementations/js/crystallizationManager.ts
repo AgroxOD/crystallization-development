@@ -326,6 +326,27 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
+    'stats',
+    'Show summary statistics',
+    () => {},
+    () => {
+      const data = loadData();
+      const statusCounts: Record<string, number> = {};
+      data.tasks.forEach((t) => {
+        const status = t.status ?? 'unknown';
+        statusCounts[status] = (statusCounts[status] || 0) + 1;
+      });
+      const avg =
+        data.tasks.reduce((sum, t) => sum + (t.final_score ?? 0), 0) /
+        (data.tasks.length || 1);
+      console.log('Task status counts:');
+      Object.entries(statusCounts).forEach(([k, v]) =>
+        console.log(`  ${k}: ${v}`)
+      );
+      console.log(`Average score: ${avg.toFixed(2)}`);
+    }
+  )
+  .command(
     'init',
     'Initialize crystallization in current repo',
     () => {},
