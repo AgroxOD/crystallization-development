@@ -25,6 +25,7 @@
 - [ ] Develop visual progress dashboard with graphs
 - [x] Create REST API service for crystallization data
 - [x] Provide example script for API integration with external projects
+- [x] Provide detailed REST API usage guide with examples
 - [x] Package cognitive core as reusable module
 - [ ] Integrate methodology with popular task trackers
 - [ ] Provide full-featured web interface
