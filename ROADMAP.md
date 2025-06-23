@@ -18,3 +18,4 @@
 - [x] Provide `crystal:sync` script to synchronize `crystallization.json` with IDE
 - [x] Integrate linting and formatting tools
 - [x] Document integration steps for other repositories and IDEs
+- [x] Regenerate `package-lock.json` with dev dependencies to fix `npm ci`

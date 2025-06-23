@@ -94,3 +94,9 @@
 ### Changed
 
 - `list-funcs` command reworked to scan files once, improving performance
+
+## [0.3.10] - 2025-10-20
+
+### Fixed
+
+- Regenerated `package-lock.json` to include dev dependencies so `npm ci` works consistently
