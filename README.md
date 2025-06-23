@@ -130,6 +130,20 @@ CLI и веб‑клиент. Такая модульность позволит
 Для автоматизации многих процессов можно обращаться к GitHub REST API.
 Через него создаются issues и pull requests, а также обновляются файлы в репозитории. Подробные примеры и шаги интеграции представлены в [docs/github_api_usage.md](docs/github_api_usage.md).
 
+Чтобы выполнять запросы с повышенными лимитами, подготовьте файл `exports.sh` со строкой
+
+```bash
+export GITHUB_TOKEN="<ваш_token>"
+```
+
+Затем сгенерируйте `.env` командой:
+
+```bash
+./scripts/create_env_from_exports.sh exports.sh
+```
+
+Теперь переменная `GITHUB_TOKEN` будет доступна для скриптов и вызовов `curl`.
+
 ---
 
 ## REST API Integration

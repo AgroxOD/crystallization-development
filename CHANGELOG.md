@@ -285,3 +285,14 @@
 - ROADMAP отмечает пункт о документировании REST API
 - README теперь ссылается на новое руководство
 - AGENTS.md дополнен информацией о файле `rest_api_usage_ru.md`
+
+## [0.3.29] - 2025-11-16
+
+### Added
+
+- Инструкция в README по сохранению `GITHUB_TOKEN` и генерации `.env`
+
+### Changed
+
+- ROADMAP включает пункт об экспорте токена
+- AGENTS.md упоминает использование `exports.sh` для GitHub API
