@@ -41,6 +41,7 @@
 В каталоге `cli-implementations/` находятся скрипты для работы с `crystallization.json` на разных языках.
 
 - **JS/TS**: `js/crystallizationManager.ts`
+- Общая логика вынесена в `src/core.ts` и используется всеми интерфейсами
 - **Python**: `python/crystallization_manager.py`
 - **Bash (experimental)**: `bash/crystallization_manager.sh`
 
