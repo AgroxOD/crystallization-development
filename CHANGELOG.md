@@ -30,3 +30,7 @@
 ## [0.3.1] - 2025-08-05
 ### Added
 - `crystal:init` command to bootstrap crystallization in any repo
+
+## [0.3.2] - 2025-08-15
+### Added
+- `CRYSTALLIZATION_PROTOCOL.md` with the first public specification

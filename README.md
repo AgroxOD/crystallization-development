@@ -30,6 +30,7 @@
 - `docs/` — подробное описание концепции и примеры
   - `concept.md` и `examples.md`
   - `universal.md` — описание кросс-языкового CLI
+  - `CRYSTALLIZATION_PROTOCOL.md` — официальный стандарт "Crystallization Protocol v1.0"
 
 ### CLI Implementations
 
