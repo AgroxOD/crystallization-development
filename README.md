@@ -125,6 +125,12 @@ CLI и веб‑клиент. Такая модульность позволит
 
 ---
 
+## GitHub API Usage
+
+Для автоматизации некоторых процессов можно обращаться к GitHub REST API. Через него создаются issues и pull requests, а также обновляются файлы в репозитории. Пример базового запроса приведён в [docs/github_api_usage.md](docs/github_api_usage.md).
+
+---
+
 ## 🙋‍♀️ Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding new features and CLI implementations in other languages.

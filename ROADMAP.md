@@ -31,6 +31,7 @@
 - [ ] Expand CLI implementations across languages and IDE plugins
 - [x] Implement analytics commands for statistics and reports
 - [ ] Add reminder and notification system with email support
+- [ ] Research GitHub API integration for automation
 - [x] Achieve crystallization level of at least 95%
 - [x] Introduce goal tracking for crystallization percentage
 - [x] Support task complexity attribute and tagging
