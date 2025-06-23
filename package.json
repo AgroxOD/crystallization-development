@@ -2,13 +2,13 @@
   "name": "crystallization-dev",
   "version": "1.0.0",
   "description": "Crystallization Development Methodology by Krishna Narayana",
-  "main": "crystallizationManager.ts",
+  "main": "cli-implementations/js/crystallizationManager.ts",
   "scripts": {
-    "crystal:add": "ts-node crystallizationManager.ts add-task",
-    "crystal:kpi": "ts-node crystallizationManager.ts update-kpi",
-    "crystal:level": "ts-node crystallizationManager.ts level",
-    "crystal:core": "ts-node crystallizationManager.ts update-core",
-    "crystal:avg": "ts-node crystallizationManager.ts average"
+    "crystal:add": "ts-node cli-implementations/js/crystallizationManager.ts add-task",
+    "crystal:kpi": "ts-node cli-implementations/js/crystallizationManager.ts update-kpi",
+    "crystal:level": "ts-node cli-implementations/js/crystallizationManager.ts level",
+    "crystal:core": "ts-node cli-implementations/js/crystallizationManager.ts update-core",
+    "crystal:avg": "ts-node cli-implementations/js/crystallizationManager.ts average"
   },
   "author": "Krishna Narayana",
   "license": "MIT",

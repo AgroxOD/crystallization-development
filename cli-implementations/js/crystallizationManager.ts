@@ -3,7 +3,7 @@ import path from 'path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-const DATA_FILE = path.resolve(__dirname, 'crystallization.json');
+const DATA_FILE = path.resolve(__dirname, '..', '..', 'crystallization.json');
 
 type KPIHistory = { iteration: number; score: number; notes?: string };
 interface Task {
