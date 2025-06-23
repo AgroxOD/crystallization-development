@@ -23,7 +23,8 @@
 - [x] Regenerate `package-lock.json` with dev dependencies to fix `npm ci`
 - [x] Publish architectural plan in `CORE.md`
 - [ ] Develop visual progress dashboard with graphs
-- [ ] Create REST API service for crystallization data
+- [x] Create REST API service for crystallization data
+- [x] Provide example script for API integration with external projects
 - [x] Package cognitive core as reusable module
 - [ ] Integrate methodology with popular task trackers
 - [ ] Provide full-featured web interface
