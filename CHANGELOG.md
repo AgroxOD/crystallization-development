@@ -106,3 +106,11 @@
 ### Added
 
 - `list-diamonds` command in JS and Python CLIs to show all diamond tasks
+
+## [0.3.12] - 2025-10-30
+
+### Added
+
+- `future_recommendations_ru.md` with long-term development ideas
+- Expanded `ROADMAP.md` with tasks from recommendations
+- Added Future Development section in README

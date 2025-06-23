@@ -20,3 +20,16 @@
 - [x] Integrate linting and formatting tools
 - [x] Document integration steps for other repositories and IDEs
 - [x] Regenerate `package-lock.json` with dev dependencies to fix `npm ci`
+- [ ] Develop visual progress dashboard with graphs
+- [ ] Create REST API service for crystallization data
+- [ ] Integrate methodology with popular task trackers
+- [ ] Provide full-featured web interface
+- [ ] Add gamification elements like achievements and leaderboards
+- [ ] Expand CLI implementations across languages and IDE plugins
+- [ ] Implement analytics commands for statistics and reports
+- [ ] Add reminder and notification system with email support
+- [ ] Introduce goal tracking for crystallization percentage
+- [ ] Support task complexity attribute and tagging
+- [ ] Refactor CLI to separate core logic and interface
+- [ ] Optimize list-funcs using caching
+- [ ] Add unit tests for key functions
