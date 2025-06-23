@@ -161,6 +161,62 @@ yargs(hideBin(process.argv))
     console.log(avg.toFixed(2));
   })
   .command(
+    'list-funcs',
+    'Scan project functions for 50 iterations and store the most common',
+    () => {},
+    () => {
+      const root = path.resolve(__dirname, '..', '..');
+      const tsFiles: string[] = [];
+      const exclude = ['node_modules', '.git'];
+
+      function gather(dir: string) {
+        for (const file of fs.readdirSync(dir)) {
+          if (exclude.includes(file)) continue;
+          const full = path.join(dir, file);
+          const stat = fs.statSync(full);
+          if (stat.isDirectory()) {
+            gather(full);
+          } else if (full.endsWith('.ts')) {
+            tsFiles.push(full);
+          }
+        }
+      }
+
+      gather(root);
+
+      const funcReg = /function\s+(\w+)/g;
+      const arrowReg = /const\s+(\w+)\s*=\s*\(/g;
+      const counts: Record<string, number> = {};
+
+      for (let i = 0; i < 50; i++) {
+        tsFiles.forEach(f => {
+          const content = fs.readFileSync(f, 'utf-8');
+          let m: RegExpExecArray | null;
+          while ((m = funcReg.exec(content))) {
+            counts[m[1]] = (counts[m[1]] || 0) + 1;
+          }
+          while ((m = arrowReg.exec(content))) {
+            counts[m[1]] = (counts[m[1]] || 0) + 1;
+          }
+        });
+      }
+
+      const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+      if (entries.length) {
+        const result = entries[0];
+        const resultPath = path.resolve(root, 'most_common_function.txt');
+        fs.writeFileSync(resultPath, `${result[0]}\n`);
+        console.log(
+          `Most common function after 50 iterations: ${result[0]} (${result[1]})`
+        );
+        console.log(`Result saved to ${resultPath}`);
+      } else {
+        console.log('No functions found');
+      }
+    }
+  )
+  .command(
     'init',
     'Initialize crystallization in current repo',
     () => {},

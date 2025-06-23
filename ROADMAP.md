@@ -12,3 +12,4 @@
 - [x] Add `crystal:init` command for repository crystallization
 - [x] Publish initial `CRYSTALLIZATION_PROTOCOL.md`
 - [x] Demonstrate 10-iteration concept improvement with KPI tracking
+- [ ] Add `list-funcs` command to analyze repository functions
