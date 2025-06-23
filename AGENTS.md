@@ -14,6 +14,7 @@
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.
 - Use `create_env_from_exports.sh` to generate a `.env` file when environment exports are required.
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
+- `CORE.md` описывает когнитивное ядро и архитектурные принципы проекта.
 - This PR demonstrates a 10-iteration improvement loop with KPI tracking.
 - Run `npm run lint` and `npm run format` before committing changes.
 - Run `npm test` to execute unit tests before submitting a PR.

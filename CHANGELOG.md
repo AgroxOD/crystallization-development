@@ -139,3 +139,15 @@
 ### Added
 
 - `list-tasks` command in JS and Python CLIs to show all tasks with statuses
+
+## [0.3.16] - 2025-11-03
+
+### Added
+
+- `CORE.md` с описанием когнитивного ядра и архитектуры
+- Раздел "Cognitive Core" в README
+
+### Changed
+
+- ROADMAP дополнен задачами по выделению ядра и API
+- AGENTS обновлен с упоминанием `CORE.md`
