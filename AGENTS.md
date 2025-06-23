@@ -32,5 +32,6 @@
 - Repository now crystallized to 100%; maintain level above 95%.
 - `CORE.md` содержит годовой план развития; при обновлении Roadmap ориентируйтесь на эти этапы.
 - Файл `docs/github_api_usage.md` теперь содержит расширенное руководство по интеграции GitHub API в другие проекты.
+- Сохраняйте GitHub токен в `exports.sh` и генерируйте `.env` через `scripts/create_env_from_exports.sh`.
 - Для внешней интеграции доступен REST API сервер (`npm run crystal:api`) и пример скрипта `scripts/api_integration_example.ts`.
 - Расширенное руководство по REST API доступно в `docs/rest_api_usage_ru.md`.
