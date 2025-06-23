@@ -8,5 +8,5 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist"
   },
-  "include": ["crystallizationManager.ts"]
+  "include": ["cli-implementations/js/crystallizationManager.ts"]
 }
