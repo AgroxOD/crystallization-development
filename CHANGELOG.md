@@ -114,3 +114,11 @@
 - `future_recommendations_ru.md` with long-term development ideas
 - Expanded `ROADMAP.md` with tasks from recommendations
 - Added Future Development section in README
+
+## [0.3.13] - 2025-10-31
+
+### Changed
+
+- Repository crystallization level increased to 100%
+- README badge and summary updated automatically
+- Added roadmap milestone for reaching 95% crystallization
