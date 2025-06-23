@@ -44,7 +44,7 @@
 - **Python**: `python/crystallization_manager.py`
 - **Bash (experimental)**: `bash/crystallization_manager.sh`
 
-Все инструменты поддерживают одинаковые команды (`add-task`, `update-kpi`, `level`, `update-core`, `average`, `list-diamonds`, `list-funcs`, `sync`).
+Все инструменты поддерживают одинаковые команды (`add-task`, `update-kpi`, `level`, `update-core`, `average`, `list-diamonds`, `list-funcs`, `list-tasks`, `sync`).
 
 ### Diamond State / Алмазное состояние
 
@@ -87,6 +87,7 @@
 8. Запусти `npm run crystal:list-diamonds` чтобы увидеть все задачи, достигшие алмазного уровня
 9. Запусти `npm run crystal:sync` для синхронизации `crystallization.json` между репозиторием и IDE
 10. Запусти `npm test` чтобы выполнить юнит-тесты
+11. Запусти `npm run crystal:list-tasks` чтобы увидеть все текущие задачи и их статусы
 
 ## 🔄 Updating the Crystallization Badge
 

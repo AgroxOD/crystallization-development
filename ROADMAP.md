@@ -15,6 +15,7 @@
 - [x] Add `list-funcs` command to analyze repository functions
 - [x] Optimize `list-funcs` performance with single-pass scanning
 - [x] Add `list-diamonds` command to display diamond tasks
+- [x] Add `list-tasks` command to show all tasks with statuses
 - [x] Provide `crystal:update-badge` script for automatic README badge refresh
 - [x] Provide `crystal:sync` script to synchronize `crystallization.json` with IDE
 - [x] Integrate linting and formatting tools
