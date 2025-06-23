@@ -2,7 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { loadData, saveData, updateKPI, Data } from '../../src/core';
+import {
+  loadData,
+  saveData,
+  updateKPI,
+  addTask,
+  updateAttributes,
+  Data,
+} from '../../src/core';
 
 yargs(hideBin(process.argv))
   .command(
@@ -16,16 +23,9 @@ yargs(hideBin(process.argv))
         .option('tags', { type: 'string' }),
     (argv) => {
       const data = loadData();
-      if (data.tasks.find((t) => t.id === argv.id)) {
-        console.error('Task already exists');
-        return;
-      }
-      data.tasks.push({
+      const ok = addTask(data, {
         id: String(argv.id),
         title: String(argv.title),
-        status: 'backlog',
-        iteration: 0,
-        kpi_history: [],
         complexity: argv.complexity ? String(argv.complexity) : undefined,
         tags: argv.tags
           ? String(argv.tags)
@@ -33,6 +33,10 @@ yargs(hideBin(process.argv))
               .map((t) => t.trim())
           : undefined,
       });
+      if (!ok) {
+        console.error('Task already exists');
+        return;
+      }
       saveData(data);
       console.log('Task added');
     }
@@ -82,14 +86,14 @@ yargs(hideBin(process.argv))
         console.error('Task not found');
         return;
       }
-      if (argv.complexity) {
-        task.complexity = String(argv.complexity);
-      }
-      if (argv.tags) {
-        task.tags = String(argv.tags)
-          .split(',')
-          .map((t) => t.trim());
-      }
+      updateAttributes(task, {
+        complexity: argv.complexity ? String(argv.complexity) : undefined,
+        tags: argv.tags
+          ? String(argv.tags)
+              .split(',')
+              .map((t) => t.trim())
+          : undefined,
+      });
       saveData(data);
       console.log('Task attributes updated');
     }

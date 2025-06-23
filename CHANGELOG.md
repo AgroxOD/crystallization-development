@@ -215,3 +215,15 @@
 
 - JS CLI refactored to use the core module
 - ROADMAP items for core packaging and CLI refactor marked as complete
+
+## [0.3.23] - 2025-11-10
+
+### Added
+
+- Helper functions `addTask` and `updateAttributes` in `src/core.ts`
+
+### Changed
+
+- JS CLI now uses new helpers for task management
+- ROADMAP updated with completed item
+- README mentions new core helpers

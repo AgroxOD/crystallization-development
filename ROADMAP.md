@@ -35,6 +35,7 @@
 - [ ] Introduce goal tracking for crystallization percentage
 - [x] Support task complexity attribute and tagging
 - [x] Refactor CLI to use the cognitive core library
+- [x] Provide helper functions `addTask` and `updateAttributes` in core
 - [x] Optimize list-funcs using caching
 - [x] Add unit tests for key functions
 - [ ] Follow yearly action plan from `CORE.md`

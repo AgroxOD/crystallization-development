@@ -88,3 +88,31 @@ export function updateKPI(
   task.final_score = score;
   if (isDiamond) task.status = 'diamond';
 }
+
+export function addTask(
+  data: Data,
+  opts: { id: string; title: string; complexity?: string; tags?: string[] }
+): boolean {
+  if (data.tasks.find((t) => t.id === opts.id)) {
+    return false;
+  }
+  const task: Task = {
+    id: opts.id,
+    title: opts.title,
+    status: 'backlog',
+    iteration: 0,
+    kpi_history: [],
+  };
+  if (opts.complexity) task.complexity = opts.complexity;
+  if (opts.tags) task.tags = opts.tags;
+  data.tasks.push(task);
+  return true;
+}
+
+export function updateAttributes(
+  task: Task,
+  opts: { complexity?: string; tags?: string[] }
+) {
+  if (opts.complexity) task.complexity = opts.complexity;
+  if (opts.tags) task.tags = opts.tags;
+}

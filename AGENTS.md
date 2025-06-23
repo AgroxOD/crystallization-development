@@ -13,6 +13,7 @@
 - New command `list-tasks` prints all tasks with their statuses.
 - New command `stats` provides summary analytics across tasks.
 - Core logic extracted to `src/core.ts`; CLI implementations should import from this module.
+- Helpers `addTask` and `updateAttributes` simplify task management in CLI.
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.
