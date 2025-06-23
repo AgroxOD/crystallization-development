@@ -76,9 +76,15 @@
 
 - `crystal:sync` script to synchronize `crystallization.json` with `.vscode` for IDE integration
 
+
 ## [0.3.7] - 2025-09-23
 
 ### Added
 
 - ESLint and Prettier configuration
 - Husky hooks with lint-staged and commitlint
+
+## [0.3.8] - 2025-10-01
+### Added
+- Инструкция по интеграции методологии в другие репозитории и IDE
+
