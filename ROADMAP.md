@@ -24,7 +24,7 @@
 - [x] Publish architectural plan in `CORE.md`
 - [ ] Develop visual progress dashboard with graphs
 - [ ] Create REST API service for crystallization data
-- [ ] Package cognitive core as reusable module
+- [x] Package cognitive core as reusable module
 - [ ] Integrate methodology with popular task trackers
 - [ ] Provide full-featured web interface
 - [ ] Add gamification elements like achievements and leaderboards
@@ -34,7 +34,7 @@
 - [x] Achieve crystallization level of at least 95%
 - [ ] Introduce goal tracking for crystallization percentage
 - [x] Support task complexity attribute and tagging
-- [ ] Refactor CLI to use the cognitive core library
+- [x] Refactor CLI to use the cognitive core library
 - [x] Optimize list-funcs using caching
 - [x] Add unit tests for key functions
 - [ ] Follow yearly action plan from `CORE.md`

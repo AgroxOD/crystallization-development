@@ -204,3 +204,14 @@
 - ROADMAP item for analytics commands marked as complete
 - README updated with new command usage
 - AGENTS mention new analytics capability
+
+## [0.3.22] - 2025-11-09
+
+### Added
+
+- Shared core library at `src/core.ts`
+
+### Changed
+
+- JS CLI refactored to use the core module
+- ROADMAP items for core packaging and CLI refactor marked as complete
