@@ -133,3 +133,9 @@
 ### Changed
 
 - ROADMAP updated to reflect completed tasks
+
+## [0.3.15] - 2025-11-02
+
+### Added
+
+- `list-tasks` command in JS and Python CLIs to show all tasks with statuses

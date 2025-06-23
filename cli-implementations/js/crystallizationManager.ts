@@ -274,6 +274,21 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
+    'list-tasks',
+    'List all tasks with statuses',
+    () => {},
+    () => {
+      const data = loadData();
+      if (data.tasks.length === 0) {
+        console.log('No tasks found');
+        return;
+      }
+      data.tasks.forEach((t) => {
+        console.log(`${t.id}: ${t.title} [${t.status ?? 'unknown'}]`);
+      });
+    }
+  )
+  .command(
     'init',
     'Initialize crystallization in current repo',
     () => {},
