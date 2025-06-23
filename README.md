@@ -141,6 +141,7 @@ npm run crystal:api
 ```
 
 Пример обращения к API приведён в `scripts/api_integration_example.ts`. Его можно адаптировать для подключения кристаллизации в сторонние проекты.
+Подробное руководство с примерами запросов и настройкой портов см. в [docs/rest_api_usage_ru.md](docs/rest_api_usage_ru.md).
 
 ---
 
