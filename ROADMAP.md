@@ -7,13 +7,13 @@
 - [ ] Automate badge refresh via GitHub Actions
 - [ ] Define universal `crystallization.json` format
 - [x] Provide reference CLI for Python
-- [ ] Provide reference CLI for Bash
+- [x] Provide reference CLI for Bash
 - [ ] Outline contribution guide for other languages
 - [x] Add `crystal:init` command for repository crystallization
 - [x] Publish initial `CRYSTALLIZATION_PROTOCOL.md`
 - [x] Demonstrate 10-iteration concept improvement with KPI tracking
 - [x] Add `list-funcs` command to analyze repository functions
-- [ ] Optimize `list-funcs` performance with single-pass scanning
+- [x] Optimize `list-funcs` performance with single-pass scanning
 - [x] Add `list-diamonds` command to display diamond tasks
 - [x] Provide `crystal:update-badge` script for automatic README badge refresh
 - [x] Provide `crystal:sync` script to synchronize `crystallization.json` with IDE
@@ -32,5 +32,5 @@
 - [ ] Introduce goal tracking for crystallization percentage
 - [ ] Support task complexity attribute and tagging
 - [ ] Refactor CLI to separate core logic and interface
-- [ ] Optimize list-funcs using caching
-- [ ] Add unit tests for key functions
+- [x] Optimize list-funcs using caching
+- [x] Add unit tests for key functions

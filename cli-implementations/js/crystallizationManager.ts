@@ -216,22 +216,49 @@ yargs(hideBin(process.argv))
 
       gather(root);
 
-      const funcReg = /function\s+(\w+)/g;
-      const arrowReg = /const\s+(\w+)\s*=\s*\(/g;
+      const cachePath = path.resolve(root, '.listfuncs_cache.json');
+      let cache: Record<
+        string,
+        { mtime: number; counts: Record<string, number> }
+      > = {};
+      if (fs.existsSync(cachePath)) {
+        try {
+          cache = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+        } catch {
+          cache = {};
+        }
+      }
+
       const counts: Record<string, number> = {};
+      const newCache: typeof cache = {};
+      const reg = /function\s+(\w+)|const\s+(\w+)\s*=\s*\(/g;
 
       await Promise.all(
         tsFiles.map(async (f) => {
+          const stat = fs.statSync(f);
+          const cached = cache[f];
+          if (cached && cached.mtime === stat.mtimeMs) {
+            Object.entries(cached.counts).forEach(([name, c]) => {
+              counts[name] = (counts[name] || 0) + c;
+            });
+            newCache[f] = cached;
+            return;
+          }
+
           const content = await fs.promises.readFile(f, 'utf-8');
+          const fileCounts: Record<string, number> = {};
           let m: RegExpExecArray | null;
-          while ((m = funcReg.exec(content))) {
-            counts[m[1]] = (counts[m[1]] || 0) + 1;
+          while ((m = reg.exec(content))) {
+            const name = m[1] || m[2];
+            if (!name) continue;
+            fileCounts[name] = (fileCounts[name] || 0) + 1;
+            counts[name] = (counts[name] || 0) + 1;
           }
-          while ((m = arrowReg.exec(content))) {
-            counts[m[1]] = (counts[m[1]] || 0) + 1;
-          }
+          newCache[f] = { mtime: stat.mtimeMs, counts: fileCounts };
         })
       );
+
+      fs.writeFileSync(cachePath, JSON.stringify(newCache, null, 2));
 
       const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
 

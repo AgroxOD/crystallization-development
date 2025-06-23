@@ -1,7 +1,7 @@
 import fs from 'fs';
 
-function calcAverage(): number {
-  const data = JSON.parse(fs.readFileSync('crystallization.json', 'utf-8'));
+function calcAverage(file = 'crystallization.json'): number {
+  const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
   const scores: number[] = data.tasks.map(
     (t: Record<string, unknown>) => (t.final_score as number | undefined) ?? 0
   );
@@ -24,6 +24,10 @@ function updateReadme(percent: number) {
   console.log(`README badge updated to ${percent}%`);
 }
 
-const avg = calcAverage();
-const percent = Math.round(avg * 100);
-updateReadme(percent);
+if (require.main === module) {
+  const avg = calcAverage();
+  const percent = Math.round(avg * 100);
+  updateReadme(percent);
+}
+
+export { calcAverage, updateReadme };
