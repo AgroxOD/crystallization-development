@@ -2,6 +2,8 @@
 
 ![Crystallization Level](https://img.shields.io/badge/crystallization-94%25-brightgreen?style=for-the-badge)
 
+> **Current Level:** 94% – вычислено командой `npm run crystal:avg`
+
 > **Author:** Krishna Narayana (omkrishna.narayana@gmail.com)  
 > June 2025
 
@@ -35,6 +37,7 @@
 
 - **JS/TS**: `js/crystallizationManager.ts`
 - **Python**: `python/crystallization_manager.py`
+- **Bash (experimental)**: `bash/crystallization_manager.sh`
 
 Все инструменты поддерживают одинаковые команды (`add-task`, `update-kpi`, `level`, `update-core`, `average`).
 

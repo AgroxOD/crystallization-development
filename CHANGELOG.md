@@ -15,3 +15,8 @@
 - Folder `cli-implementations/` with TypeScript and Python CLI
 - New roadmap items for cross-language support
 - Basic guidelines for adding other languages
+
+## [0.2.1] - 2025-07-12
+### Added
+- Experimental Bash CLI skeleton
+- Documented current crystallization level in README
