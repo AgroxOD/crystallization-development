@@ -20,3 +20,9 @@
 ### Added
 - Experimental Bash CLI skeleton
 - Documented current crystallization level in README
+
+## [0.3.0] - 2025-08-01
+### Added
+- Diamond KPI concept with threshold checking
+- Updated TypeScript CLI to mark tasks as `diamond`
+- Expanded `crystallization.json` with metric values and thresholds

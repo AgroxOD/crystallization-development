@@ -3,29 +3,39 @@ import path from 'path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-const DATA_FILE = path.resolve(__dirname, '..', '..', 'crystallization.json');
+type KPIDef = {
+  key: string;
+  title: string;
+  threshold: number;
+};
 
-type KPIHistory = { iteration: number; score: number; notes?: string };
-interface Task {
+type KPIEntry = {
+  iteration: number;
+  score: number;
+  [key: string]: number | boolean | string | undefined;
+  is_diamond?: boolean;
+};
+
+type Task = {
   id: string;
   title: string;
   status?: string;
   iteration: number;
-  kpi_history: KPIHistory[];
+  kpi_history: KPIEntry[];
   final_score?: number;
   notes?: string;
-}
-interface Data {
+};
+
+type Data = {
   core_version: number;
   core_principles: string[];
   tasks: Task[];
-  kpi_definitions: string[];
-}
+  kpi_definitions: KPIDef[];
+};
+
+const DATA_FILE = path.resolve(__dirname, '..', '..', 'crystallization.json');
 
 function loadData(): Data {
-  if (!fs.existsSync(DATA_FILE)) {
-    throw new Error('Data file not found');
-  }
   const raw = fs.readFileSync(DATA_FILE, 'utf-8');
   return JSON.parse(raw) as Data;
 }
@@ -34,16 +44,49 @@ function saveData(data: Data) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 }
 
+function calcScore(values: Record<string, number>, defs: KPIDef[]): number {
+  let sum = 0;
+  defs.forEach(def => {
+    const v = values[def.key];
+    if (typeof v === 'number') {
+      if (def.key === 'bug_count' || def.key === 'change_failure_rate') {
+        sum += v <= def.threshold ? 1 : 0;
+      } else {
+        sum += v >= def.threshold ? 1 : 0;
+      }
+    }
+  });
+  return +(sum / defs.length).toFixed(2);
+}
+
+function updateKPI(task: Task, values: Record<string, number>, defs: KPIDef[]) {
+  const iter = task.iteration + 1;
+  const isDiamond = defs.every(def => {
+    const v = values[def.key];
+    if (typeof v !== 'number') return false;
+    if (def.key === 'bug_count' || def.key === 'change_failure_rate') {
+      return v <= def.threshold;
+    }
+    return v >= def.threshold;
+  });
+  const score = isDiamond ? 1.0 : calcScore(values, defs);
+  const entry: KPIEntry = { iteration: iter, score, ...values, is_diamond: isDiamond };
+  task.iteration = iter;
+  task.kpi_history.push(entry);
+  task.final_score = score;
+  if (isDiamond) task.status = 'diamond';
+}
+
 yargs(hideBin(process.argv))
   .command(
     'add-task',
     'Add new task',
-    (y) =>
+    y =>
       y.option('id', { type: 'string', demandOption: true })
         .option('title', { type: 'string', demandOption: true }),
-    (argv) => {
+    argv => {
       const data = loadData();
-      if (data.tasks.find((t) => t.id === argv.id)) {
+      if (data.tasks.find(t => t.id === argv.id)) {
         console.error('Task already exists');
         return;
       }
@@ -52,7 +95,7 @@ yargs(hideBin(process.argv))
         title: String(argv.title),
         status: 'backlog',
         iteration: 0,
-        kpi_history: [],
+        kpi_history: []
       });
       saveData(data);
       console.log('Task added');
@@ -60,33 +103,36 @@ yargs(hideBin(process.argv))
   )
   .command(
     'update-kpi',
-    'Update KPI score for task',
-    (y) =>
+    'Update KPI values for task',
+    y =>
       y.option('id', { type: 'string', demandOption: true })
-        .option('score', { type: 'number', demandOption: true })
-        .option('notes', { type: 'string' }),
-    (argv) => {
+        .option('metrics', { type: 'string', demandOption: true }),
+    argv => {
       const data = loadData();
-      const task = data.tasks.find((t) => t.id === argv.id);
+      const task = data.tasks.find(t => t.id === argv.id);
       if (!task) {
         console.error('Task not found');
         return;
       }
-      const iter = task.iteration + 1;
-      task.iteration = iter;
-      task.kpi_history.push({ iteration: iter, score: Number(argv.score), notes: argv.notes as string });
-      task.final_score = Number(argv.score);
+      let metrics: Record<string, number> = {};
+      try {
+        metrics = JSON.parse(String(argv.metrics));
+      } catch {
+        console.error('Invalid metrics JSON');
+        return;
+      }
+      updateKPI(task, metrics, data.kpi_definitions);
       saveData(data);
-      console.log('KPI updated');
+      console.log(task.status === 'diamond' ? '💎 Diamond achieved!' : `Progressed to iteration ${task.iteration}.`);
     }
   )
   .command(
     'level',
     'Show crystallization level for task',
-    (y) => y.option('id', { type: 'string', demandOption: true }),
-    (argv) => {
+    y => y.option('id', { type: 'string', demandOption: true }),
+    argv => {
       const data = loadData();
-      const task = data.tasks.find((t) => t.id === argv.id);
+      const task = data.tasks.find(t => t.id === argv.id);
       if (!task) {
         console.error('Task not found');
         return;
@@ -97,10 +143,12 @@ yargs(hideBin(process.argv))
   .command(
     'update-core',
     'Update core principles',
-    (y) => y.option('principles', { type: 'string', demandOption: true }),
-    (argv) => {
+    y => y.option('principles', { type: 'string', demandOption: true }),
+    argv => {
       const data = loadData();
-      data.core_principles = String(argv.principles).split(',').map((p) => p.trim());
+      data.core_principles = String(argv.principles)
+        .split(',')
+        .map(p => p.trim());
       data.core_version += 1;
       saveData(data);
       console.log('Core principles updated');
@@ -108,7 +156,7 @@ yargs(hideBin(process.argv))
   )
   .command('average', 'Show average crystallization level', () => {}, () => {
     const data = loadData();
-    const scores = data.tasks.map((t) => t.final_score ?? 0);
+    const scores = data.tasks.map(t => t.final_score ?? 0);
     const avg = scores.reduce((a, b) => a + b, 0) / (scores.length || 1);
     console.log(avg.toFixed(2));
   })

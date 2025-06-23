@@ -1,29 +1,40 @@
 {
-  "core_version": 1,
+  "core_version": 2,
   "core_principles": [
     "Итеративное улучшение",
-    "Рефлексия на основе KPI",
+    "KPI-достижение алмазного состояния (100%)",
+    "Рефлексия по стандарту Diamond",
     "Соблюдение современных практик"
+  ],
+  "kpi_definitions": [
+    { "key": "cycle_time_days", "title": "Cycle Time (days)", "threshold": 3 },
+    { "key": "code_coverage", "title": "Code Coverage", "threshold": 0.8 },
+    { "key": "change_failure_rate", "title": "Change Failure Rate", "threshold": 0.05 },
+    { "key": "mttr_hours", "title": "Mean Time To Recovery", "threshold": 1.5 },
+    { "key": "bug_count", "title": "Bug Count", "threshold": 0 },
+    { "key": "deployment_frequency", "title": "Deployment Frequency", "threshold": 2 }
   ],
   "tasks": [
     {
       "id": "AGMCS-001",
-      "title": "Пример задачи: внедрение петли кристаллизации",
-      "status": "crystallized",
-      "iteration": 3,
+      "title": "Внедрение алмазной кристаллизации",
+      "status": "diamond",
+      "iteration": 4,
       "kpi_history": [
-        { "iteration": 1, "score": 0.65, "notes": "Базовая реализация" },
-        { "iteration": 2, "score": 0.82, "notes": "Добавлен анализ KPI" },
-        { "iteration": 3, "score": 0.94, "notes": "Интеграция с CI/CD и визуализация" }
+        {
+          "iteration": 4,
+          "score": 1.0,
+          "cycle_time_days": 2.3,
+          "code_coverage": 0.85,
+          "change_failure_rate": 0.0,
+          "mttr_hours": 1.1,
+          "bug_count": 0,
+          "deployment_frequency": 3,
+          "is_diamond": true
+        }
       ],
-      "final_score": 0.94,
-      "notes": "Реализовано в соответствии с best practices"
+      "final_score": 1.0,
+      "notes": "Идеальная решетка KPI. Diamond achieved 💎"
     }
-  ],
-  "kpi_definitions": [
-    "Code Quality",
-    "Performance",
-    "Test Coverage",
-    "Compliance with Modern Practices"
   ]
 }

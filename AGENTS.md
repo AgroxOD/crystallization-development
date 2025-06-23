@@ -5,3 +5,4 @@
 - Keep the badge in `README.md` up to date using the result of `npm run crystal:avg`.
 - Encourage new CLI implementations in `cli-implementations/` for other languages.
 - A minimal Bash script is available as an experimental example.
+- Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
