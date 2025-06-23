@@ -171,3 +171,15 @@
 
 - Summary of yearly action plan from `CORE.md` in README and Roadmap
 - AGENTS updated with reference to annual plan
+
+## [0.3.19] - 2025-11-06
+
+### Added
+
+- GitHub Actions workflow `update-badge.yml` to refresh the crystallization badge weekly
+
+### Changed
+
+- ROADMAP item for badge automation marked as complete
+- README mentions automatic badge updates via GitHub Actions
+- AGENTS updated with reference to new workflow
