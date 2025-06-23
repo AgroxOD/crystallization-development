@@ -2,6 +2,7 @@
 
 - [x] Initialize repository with base files
 - [ ] Implement additional features
+- [x] Implement Diamond state and KPI thresholds
 - [x] Document badge update process in README
 - [ ] Automate badge refresh via GitHub Actions
 - [ ] Define universal `crystallization.json` format

@@ -1,8 +1,8 @@
 # Crystallization Development Methodology
 
-![Crystallization Level](https://img.shields.io/badge/crystallization-94%25-brightgreen?style=for-the-badge)
+![Crystallization Level](https://img.shields.io/badge/crystallization-100%25-brightgreen?style=for-the-badge)
 
-> **Current Level:** 94% – вычислено командой `npm run crystal:avg`
+> **Current Level:** 100% – вычислено командой `npm run crystal:avg`
 
 > **Author:** Krishna Narayana (omkrishna.narayana@gmail.com)  
 > June 2025
@@ -40,6 +40,12 @@
 - **Bash (experimental)**: `bash/crystallization_manager.sh`
 
 Все инструменты поддерживают одинаковые команды (`add-task`, `update-kpi`, `level`, `update-core`, `average`).
+
+### Diamond State / Алмазное состояние
+
+Когда задача выполняет все KPI-пороги, она получает статус `diamond`. Такая кристаллическая решётка не содержит багов или долгов и не требует доработки, пока не изменятся критерии.
+
+![Diamond Level](https://img.shields.io/badge/crystallization--diamond-%F0%9F%92%8E-brightgreen?style=for-the-badge)
 
 ---
 
