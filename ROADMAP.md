@@ -8,7 +8,7 @@
 - [ ] Define universal `crystallization.json` format
 - [x] Provide reference CLI for Python
 - [x] Provide reference CLI for Bash
-- [ ] Outline contribution guide for other languages
+- [x] Outline contribution guide for other languages (see CONTRIBUTING.md)
 - [x] Add `crystal:init` command for repository crystallization
 - [x] Publish initial `CRYSTALLIZATION_PROTOCOL.md`
 - [x] Demonstrate 10-iteration concept improvement with KPI tracking

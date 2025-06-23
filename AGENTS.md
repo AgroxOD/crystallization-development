@@ -6,6 +6,7 @@
 - Use `npm run crystal:update-badge` to automatically refresh the README badge.
 - GitHub Actions workflow `update-badge.yml` runs weekly to keep the badge current.
 - Encourage new CLI implementations in `cli-implementations/` for other languages.
+- See CONTRIBUTING.md for guidelines on adding new CLI implementations.
 - A minimal Bash script is available as an experimental example; reference CLI for Bash completed.
 - New command `list-funcs` now caches results for faster repeated runs and stores the most common function in `most_common_function.txt`.
 - New command `list-diamonds` lists all tasks with `diamond` status.
