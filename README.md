@@ -144,6 +144,14 @@ export GITHUB_TOKEN="<ваш_token>"
 
 Теперь переменная `GITHUB_TOKEN` будет доступна для скриптов и вызовов `curl`.
 
+#### Пример запроса на список коммитов
+
+Чтобы получить историю коммитов этого репозитория, выполните:
+
+```bash
+curl https://api.github.com/repos/AgroxOD/crystallization-development/commits
+```
+
 ### Automatic Update of Old Repositories
 
 Команда `npm run crystal:auto-update` использует GitHub API для обновления
