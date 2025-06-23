@@ -183,3 +183,12 @@
 - ROADMAP item for badge automation marked as complete
 - README mentions automatic badge updates via GitHub Actions
 - AGENTS updated with reference to new workflow
+
+## [0.3.20] - 2025-11-07
+
+### Added
+
+- `CONTRIBUTING.md` with guidelines for adding CLI implementations in other languages
+- README section linking to the new contributing guide
+- Roadmap item for the contribution guide marked as complete
+- AGENTS mention `CONTRIBUTING.md`

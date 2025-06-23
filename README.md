@@ -121,6 +121,10 @@ CLI и веб‑клиент. Такая модульность позволит
 
 ---
 
+## 🙋‍♀️ Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding new features and CLI implementations in other languages.
+
 ## 🔮 Future Development
 
 Документ `docs/future_recommendations_ru.md` содержит идеи и направления развития. Основные задачи отражены в `ROADMAP.md`.
