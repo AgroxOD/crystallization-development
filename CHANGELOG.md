@@ -40,3 +40,7 @@
 - Example 10-iteration improvement loop with KPI tracking in `crystallization.json`
 - Updated README badge to 83%
 
+## [0.3.4] - 2025-08-30
+### Added
+- Команда `list-funcs` для поиска функций в проекте и сохранения самой частой в `most_common_function.txt`
+
