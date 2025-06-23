@@ -12,3 +12,5 @@
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
 - This PR demonstrates a 10-iteration improvement loop with KPI tracking.
+- Run `npm run lint` and `npm run format` before committing changes.
+- Commit messages should follow the Conventional Commits style; commitlint will enforce it.
