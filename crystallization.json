@@ -43,6 +43,8 @@
       "id": "AGMCS-001",
       "title": "Внедрение алмазной кристаллизации",
       "status": "diamond",
+      "complexity": "medium",
+      "tags": ["core"],
       "iteration": 4,
       "kpi_history": [
         {
@@ -64,6 +66,8 @@
       "id": "AGMCS-002",
       "title": "Улучшение концепции кристаллизации",
       "status": "diamond",
+      "complexity": "high",
+      "tags": ["core", "refactoring"],
       "iteration": 13,
       "kpi_history": [
         {

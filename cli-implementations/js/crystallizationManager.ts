@@ -24,6 +24,8 @@ type Task = {
   kpi_history: KPIEntry[];
   final_score?: number;
   notes?: string;
+  complexity?: string;
+  tags?: string[];
 };
 
 type Data = {
@@ -89,7 +91,9 @@ yargs(hideBin(process.argv))
     (y) =>
       y
         .option('id', { type: 'string', demandOption: true })
-        .option('title', { type: 'string', demandOption: true }),
+        .option('title', { type: 'string', demandOption: true })
+        .option('complexity', { type: 'string' })
+        .option('tags', { type: 'string' }),
     (argv) => {
       const data = loadData();
       if (data.tasks.find((t) => t.id === argv.id)) {
@@ -102,6 +106,12 @@ yargs(hideBin(process.argv))
         status: 'backlog',
         iteration: 0,
         kpi_history: [],
+        complexity: argv.complexity ? String(argv.complexity) : undefined,
+        tags: argv.tags
+          ? String(argv.tags)
+              .split(',')
+              .map((t) => t.trim())
+          : undefined,
       });
       saveData(data);
       console.log('Task added');
@@ -135,6 +145,33 @@ yargs(hideBin(process.argv))
           ? '💎 Diamond achieved!'
           : `Progressed to iteration ${task.iteration}.`
       );
+    }
+  )
+  .command(
+    'update-attrs',
+    'Update task complexity and tags',
+    (y) =>
+      y
+        .option('id', { type: 'string', demandOption: true })
+        .option('complexity', { type: 'string' })
+        .option('tags', { type: 'string' }),
+    (argv) => {
+      const data = loadData();
+      const task = data.tasks.find((t) => t.id === argv.id);
+      if (!task) {
+        console.error('Task not found');
+        return;
+      }
+      if (argv.complexity) {
+        task.complexity = String(argv.complexity);
+      }
+      if (argv.tags) {
+        task.tags = String(argv.tags)
+          .split(',')
+          .map((t) => t.trim());
+      }
+      saveData(data);
+      console.log('Task attributes updated');
     }
   )
   .command(

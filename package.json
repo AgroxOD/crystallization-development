@@ -6,6 +6,7 @@
   "scripts": {
     "crystal:add": "ts-node cli-implementations/js/crystallizationManager.ts add-task",
     "crystal:kpi": "ts-node cli-implementations/js/crystallizationManager.ts update-kpi",
+    "crystal:attrs": "ts-node cli-implementations/js/crystallizationManager.ts update-attrs",
     "crystal:level": "ts-node cli-implementations/js/crystallizationManager.ts level",
     "crystal:core": "ts-node cli-implementations/js/crystallizationManager.ts update-core",
     "crystal:avg": "ts-node cli-implementations/js/crystallizationManager.ts average",

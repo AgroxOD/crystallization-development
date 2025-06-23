@@ -20,13 +20,18 @@ def add_task(args):
     if any(t['id'] == args.id for t in data['tasks']):
         print('Task already exists')
         return
-    data['tasks'].append({
+    task = {
         'id': args.id,
         'title': args.title,
         'status': 'backlog',
         'iteration': 0,
         'kpi_history': []
-    })
+    }
+    if args.complexity:
+        task['complexity'] = args.complexity
+    if args.tags:
+        task['tags'] = [t.strip() for t in args.tags.split(',')]
+    data['tasks'].append(task)
     save_data(data)
     print('Task added')
 
@@ -47,6 +52,20 @@ def update_kpi(args):
     task['final_score'] = args.score
     save_data(data)
     print('KPI updated')
+
+
+def update_attrs(args):
+    data = load_data()
+    task = next((t for t in data['tasks'] if t['id'] == args.id), None)
+    if not task:
+        print('Task not found')
+        return
+    if args.complexity:
+        task['complexity'] = args.complexity
+    if args.tags:
+        task['tags'] = [t.strip() for t in args.tags.split(',')]
+    save_data(data)
+    print('Task attributes updated')
 
 
 def level(args):
@@ -115,6 +134,8 @@ sub = parser.add_subparsers(dest='command')
 add = sub.add_parser('add-task')
 add.add_argument('--id', required=True)
 add.add_argument('--title', required=True)
+add.add_argument('--complexity')
+add.add_argument('--tags')
 add.set_defaults(func=add_task)
 
 kpi = sub.add_parser('update-kpi')
@@ -122,6 +143,12 @@ kpi.add_argument('--id', required=True)
 kpi.add_argument('--score', type=float, required=True)
 kpi.add_argument('--notes', default='')
 kpi.set_defaults(func=update_kpi)
+
+attrs = sub.add_parser('update-attrs')
+attrs.add_argument('--id', required=True)
+attrs.add_argument('--complexity')
+attrs.add_argument('--tags')
+attrs.set_defaults(func=update_attrs)
 
 lvl = sub.add_parser('level')
 lvl.add_argument('--id', required=True)
