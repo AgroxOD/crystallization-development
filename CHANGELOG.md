@@ -52,3 +52,7 @@
 ## [0.3.6] - 2025-09-20
 ### Added
 - `crystal:sync` script to synchronize `crystallization.json` with `.vscode` for IDE integration
+
+## [0.3.7] - 2025-10-01
+### Added
+- Инструкция по интеграции методологии в другие репозитории и IDE
