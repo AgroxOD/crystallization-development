@@ -177,6 +177,22 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
+    'list-diamonds',
+    'List all tasks in diamond state',
+    () => {},
+    () => {
+      const data = loadData();
+      const diamonds = data.tasks.filter((t) => t.status === 'diamond');
+      if (diamonds.length === 0) {
+        console.log('No diamond tasks');
+        return;
+      }
+      diamonds.forEach((t) => {
+        console.log(`${t.id}: ${t.title}`);
+      });
+    }
+  )
+  .command(
     'list-funcs',
     'Scan project functions and store the most common',
     () => {},
