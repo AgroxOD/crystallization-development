@@ -144,6 +144,13 @@ export GITHUB_TOKEN="<ваш_token>"
 
 Теперь переменная `GITHUB_TOKEN` будет доступна для скриптов и вызовов `curl`.
 
+### Automatic Update of Old Repositories
+
+Команда `npm run crystal:auto-update` использует GitHub API для обновления
+`crystallization.json` в репозиториях, перечисленных в переменной окружения
+`UPDATE_REPOS`. Если в удалённом репозитории версия `core_version` ниже, чем в
+текущем проекте, файл будет автоматически перезаписан.
+
 ---
 
 ## REST API Integration
