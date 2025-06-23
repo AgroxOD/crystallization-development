@@ -110,6 +110,21 @@ def list_tasks(args):
         print(f"{t['id']}: {t['title']} [{status}]")
 
 
+def stats(args):
+    data = load_data()
+    status_counts = {}
+    for t in data.get('tasks', []):
+        status = t.get('status', 'unknown')
+        status_counts[status] = status_counts.get(status, 0) + 1
+    avg = sum(t.get('final_score', 0) for t in data.get('tasks', [])) / (
+        len(data.get('tasks', [])) or 1
+    )
+    print('Task status counts:')
+    for k, v in status_counts.items():
+        print(f"  {k}: {v}")
+    print(f"Average score: {avg:.2f}")
+
+
 def init_repo(args):
     if DATA_FILE.exists():
         print('crystallization.json already exists')
@@ -166,6 +181,9 @@ ld.set_defaults(func=list_diamonds)
 
 lt = sub.add_parser('list-tasks')
 lt.set_defaults(func=list_tasks)
+
+st = sub.add_parser('stats')
+st.set_defaults(func=stats)
 
 init_p = sub.add_parser('init')
 init_p.set_defaults(func=init_repo)

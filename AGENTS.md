@@ -11,6 +11,7 @@
 - New command `list-funcs` now caches results for faster repeated runs and stores the most common function in `most_common_function.txt`.
 - New command `list-diamonds` lists all tasks with `diamond` status.
 - New command `list-tasks` prints all tasks with their statuses.
+- New command `stats` provides summary analytics across tasks.
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.

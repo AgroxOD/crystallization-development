@@ -192,3 +192,15 @@
 - README section linking to the new contributing guide
 - Roadmap item for the contribution guide marked as complete
 - AGENTS mention `CONTRIBUTING.md`
+
+## [0.3.21] - 2025-11-08
+
+### Added
+
+- `stats` command in JS and Python CLIs to show task statistics
+
+### Changed
+
+- ROADMAP item for analytics commands marked as complete
+- README updated with new command usage
+- AGENTS mention new analytics capability
