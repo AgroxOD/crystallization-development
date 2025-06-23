@@ -42,6 +42,7 @@
 
 - **JS/TS**: `js/crystallizationManager.ts`
 - Общая логика вынесена в `src/core.ts` и используется всеми интерфейсами
+- Модуль также предоставляет функции `addTask` и `updateAttributes` для управления задачами
 - **Python**: `python/crystallization_manager.py`
 - **Bash (experimental)**: `bash/crystallization_manager.sh`
 
