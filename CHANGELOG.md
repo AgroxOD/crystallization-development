@@ -48,3 +48,7 @@
 ### Added
 - Скрипт `crystal:update-badge` для автоматического обновления бейджа в README
 
+
+## [0.3.6] - 2025-09-20
+### Added
+- `crystal:sync` script to synchronize `crystallization.json` with `.vscode` for IDE integration
