@@ -33,7 +33,7 @@
 - [ ] Add reminder and notification system with email support
 - [x] Achieve crystallization level of at least 95%
 - [ ] Introduce goal tracking for crystallization percentage
-- [ ] Support task complexity attribute and tagging
+- [x] Support task complexity attribute and tagging
 - [ ] Refactor CLI to use the cognitive core library
 - [x] Optimize list-funcs using caching
 - [x] Add unit tests for key functions
