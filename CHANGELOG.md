@@ -239,3 +239,11 @@
 
 - ROADMAP item for goal tracking marked as complete
 - README and AGENTS updated with new command and field
+
+## [0.3.25] - 2025-11-12
+
+### Added
+
+- Documentation `docs/github_api_usage.md` explaining basic GitHub API operations
+- Roadmap item for GitHub API integration
+- README section "GitHub API Usage" linking to the new doc
