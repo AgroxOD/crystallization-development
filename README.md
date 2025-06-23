@@ -52,10 +52,16 @@
 
 ## 📈 Быстрый старт
 
-1. Склонируй репозиторий  
+1. Склонируй репозиторий
 2. Ознакомься с документацией в `/docs`
 3. Попробуй `crystallizationManager.ts` для добавления своих задач
 4. Оцени уровень “кристаллизации” через CLI и бейджи
+5. Запусти `npm run crystal:avg` и обнови процент в бейдже README
+
+## 🔄 Updating the Crystallization Badge
+
+Чтобы отображать актуальный уровень кристаллизации, запусти `npm run crystal:avg`. Полученное значение подставь в ссылку на бейдж в начале README или автоматизируй этот шаг через CI.
+
 
 ---
 
@@ -71,4 +77,3 @@
 > “Crystallization in Development” is a novel, iterative methodology for tracking and evolving tasks and features to their mature state, measured by custom KPIs and contemporary best practices. The system visualizes the journey from raw idea to a crystallized solution.
 
 ---
-\nRepository initialized with full file structure.
