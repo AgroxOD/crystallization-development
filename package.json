@@ -10,7 +10,9 @@
     "crystal:core": "ts-node cli-implementations/js/crystallizationManager.ts update-core",
     "crystal:avg": "ts-node cli-implementations/js/crystallizationManager.ts average",
     "crystal:init": "ts-node cli-implementations/js/crystallizationManager.ts init",
-    "crystal:update-badge": "ts-node scripts/update_badge.ts"
+    "crystal:update-badge": "ts-node scripts/update_badge.ts",
+    "crystal:sync": "ts-node scripts/sync_crystallization.ts",
+    "crystal:list-funcs": "ts-node cli-implementations/js/crystallizationManager.ts list-funcs"
   },
   "author": "Krishna Narayana",
   "license": "MIT",
