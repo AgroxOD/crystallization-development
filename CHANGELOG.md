@@ -247,3 +247,15 @@
 - Documentation `docs/github_api_usage.md` explaining basic GitHub API operations
 - Roadmap item for GitHub API integration
 - README section "GitHub API Usage" linking to the new doc
+
+## [0.3.26] - 2025-11-13
+
+### Added
+
+- Расширенное руководство `docs/github_api_usage.md` по интеграции GitHub API в сторонние проекты
+
+### Changed
+
+- Обновлён `ROADMAP.md` с выполненным пунктом исследований API и добавлена новая задача
+- README раздел «GitHub API Usage» дополнен ссылкой на новое руководство
+- AGENTS.md отражает наличие расширенной документации
