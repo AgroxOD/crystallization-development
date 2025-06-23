@@ -13,3 +13,4 @@
 - [x] Publish initial `CRYSTALLIZATION_PROTOCOL.md`
 - [x] Demonstrate 10-iteration concept improvement with KPI tracking
 - [ ] Add `list-funcs` command to analyze repository functions
+- [x] Provide `crystal:update-badge` script for automatic README badge refresh
