@@ -14,6 +14,7 @@
     "crystal:update-badge": "ts-node scripts/update_badge.ts",
     "crystal:sync": "ts-node scripts/sync_crystallization.ts",
     "crystal:list-funcs": "ts-node cli-implementations/js/crystallizationManager.ts list-funcs",
+    "crystal:goal": "ts-node cli-implementations/js/crystallizationManager.ts goal",
     "test": "ts-node tests/update_badge.test.ts",
     "lint": "eslint \"**/*.ts\"",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",

@@ -31,6 +31,7 @@ export type Data = {
   core_principles: string[];
   tasks: Task[];
   kpi_definitions: KPIDef[];
+  goal_percentage?: number;
 };
 
 const DATA_FILE = path.resolve(__dirname, '..', 'crystallization.json');
@@ -115,4 +116,14 @@ export function updateAttributes(
 ) {
   if (opts.complexity) task.complexity = opts.complexity;
   if (opts.tags) task.tags = opts.tags;
+}
+
+export function getAverageScore(data: Data): number {
+  const scores = data.tasks.map((t) => t.final_score ?? 0);
+  const avg = scores.reduce((a, b) => a + b, 0) / (scores.length || 1);
+  return +avg.toFixed(2);
+}
+
+export function setGoal(data: Data, goal: number) {
+  data.goal_percentage = goal;
 }

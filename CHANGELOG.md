@@ -227,3 +227,15 @@
 - JS CLI now uses new helpers for task management
 - ROADMAP updated with completed item
 - README mentions new core helpers
+
+## [0.3.24] - 2025-11-11
+
+### Added
+
+- Goal tracking with `goal_percentage` in `crystallization.json`
+- CLI command `goal` to show or set crystallization target
+
+### Changed
+
+- ROADMAP item for goal tracking marked as complete
+- README and AGENTS updated with new command and field

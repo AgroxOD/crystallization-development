@@ -9,6 +9,8 @@ import {
   addTask,
   updateAttributes,
   Data,
+  getAverageScore,
+  setGoal,
 } from '../../src/core';
 
 yargs(hideBin(process.argv))
@@ -268,6 +270,23 @@ yargs(hideBin(process.argv))
         console.log(`  ${k}: ${v}`)
       );
       console.log(`Average score: ${avg.toFixed(2)}`);
+    }
+  )
+  .command(
+    'goal',
+    'Show or set crystallization goal',
+    (y) => y.option('set', { type: 'number' }),
+    (argv) => {
+      const data = loadData();
+      if (typeof argv.set === 'number') {
+        setGoal(data, argv.set);
+        saveData(data);
+        console.log(`Goal set to ${argv.set}%`);
+        return;
+      }
+      const goal = data.goal_percentage ?? 100;
+      const avg = getAverageScore(data) * 100;
+      console.log(`Goal: ${goal}%, current: ${avg.toFixed(2)}%`);
     }
   )
   .command(

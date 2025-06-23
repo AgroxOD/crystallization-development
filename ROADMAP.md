@@ -32,7 +32,7 @@
 - [x] Implement analytics commands for statistics and reports
 - [ ] Add reminder and notification system with email support
 - [x] Achieve crystallization level of at least 95%
-- [ ] Introduce goal tracking for crystallization percentage
+- [x] Introduce goal tracking for crystallization percentage
 - [x] Support task complexity attribute and tagging
 - [x] Refactor CLI to use the cognitive core library
 - [x] Provide helper functions `addTask` and `updateAttributes` in core

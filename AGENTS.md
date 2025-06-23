@@ -12,6 +12,8 @@
 - New command `list-diamonds` lists all tasks with `diamond` status.
 - New command `list-tasks` prints all tasks with their statuses.
 - New command `stats` provides summary analytics across tasks.
+- New command `goal` shows or sets the `goal_percentage` value for crystallization.
+- `crystallization.json` now includes `goal_percentage` to track desired level.
 - Core logic extracted to `src/core.ts`; CLI implementations should import from this module.
 - Helpers `addTask` and `updateAttributes` simplify task management in CLI.
 - `crystal:sync` keeps `crystallization.json` synchronized between the repo and `.vscode` for IDE integration.
