@@ -1,0 +1,27 @@
+name: Crystallization Level Check
+
+on:
+  pull_request:
+    paths:
+      - '**.ts'
+      - 'crystallization.json'
+
+jobs:
+  crystallization:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run crystallization average check
+        run: npm run crystal:avg
+        env:
+          CI: true
