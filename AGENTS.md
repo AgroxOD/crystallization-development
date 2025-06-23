@@ -23,3 +23,4 @@
 - Keep `package-lock.json` synced with `package.json` by running `npm install` whenever dependencies change.
 - See `docs/future_recommendations_ru.md` for long-term ideas.
 - Repository now crystallized to 100%; maintain level above 95%.
+- `CORE.md` содержит годовой план развития; при обновлении Roadmap ориентируйтесь на эти этапы.

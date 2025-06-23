@@ -164,3 +164,10 @@
 
 - ROADMAP отмечает выполненную задачу по сложности и тегам
 - README дополнен описанием новых опций CLI
+
+## [0.3.18] - 2025-11-05
+
+### Added
+
+- Summary of yearly action plan from `CORE.md` in README and Roadmap
+- AGENTS updated with reference to annual plan

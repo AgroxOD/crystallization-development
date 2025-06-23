@@ -37,3 +37,4 @@
 - [ ] Refactor CLI to use the cognitive core library
 - [x] Optimize list-funcs using caching
 - [x] Add unit tests for key functions
+- [ ] Follow yearly action plan from `CORE.md`
