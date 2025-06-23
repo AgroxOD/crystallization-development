@@ -4,3 +4,4 @@
 - Use `npm run crystal:avg` to verify crystallization level when possible.
 - Keep the badge in `README.md` up to date using the result of `npm run crystal:avg`.
 - Encourage new CLI implementations in `cli-implementations/` for other languages.
+- A minimal Bash script is available as an experimental example.

@@ -5,5 +5,6 @@
 - [x] Document badge update process in README
 - [ ] Automate badge refresh via GitHub Actions
 - [ ] Define universal `crystallization.json` format
-- [ ] Provide reference CLI for Python
+- [x] Provide reference CLI for Python
+- [ ] Provide reference CLI for Bash
 - [ ] Outline contribution guide for other languages
