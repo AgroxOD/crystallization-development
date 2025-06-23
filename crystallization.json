@@ -38,6 +38,7 @@
       "threshold": 2
     }
   ],
+  "goal_percentage": 95,
   "tasks": [
     {
       "id": "AGMCS-001",
