@@ -16,6 +16,16 @@
 curl -H "Authorization: token <TOKEN>" https://api.github.com/repos/<owner>/<repo>/issues
 ```
 
+### Получение списка коммитов
+
+Если нужно просто получить историю коммитов, можно обойтись без авторизации и выполнить команду:
+
+```bash
+curl https://api.github.com/repos/AgroxOD/crystallization-development/commits
+```
+
+Ответ придёт в формате JSON и будет содержать массив объектов commit.
+
 Токен можно создать в настройках GitHub (Personal Access Token). Через API можно, например, автоматически создавать issue при обнаружении низкого уровня кристаллизации или обновлять status бейджа.
 
 Подробнее см. официальную документацию GitHub: <https://docs.github.com/en/rest>

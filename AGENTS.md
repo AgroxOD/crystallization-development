@@ -36,3 +36,4 @@
 - Для внешней интеграции доступен REST API сервер (`npm run crystal:api`) и пример скрипта `scripts/api_integration_example.ts`.
 - Расширенное руководство по REST API доступно в `docs/rest_api_usage_ru.md`.
 - Новый скрипт `crystal:auto-update` обновляет репозитории с устаревшей версией кристализатора через GitHub API.
+- Документ `docs/github_api_usage.md` дополнен примером curl для получения списка коммитов.
