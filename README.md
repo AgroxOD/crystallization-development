@@ -1,8 +1,8 @@
 # Crystallization Development Methodology
 
-![Crystallization Level](https://img.shields.io/badge/crystallization-100%25-brightgreen?style=for-the-badge)
+![Crystallization Level](https://img.shields.io/badge/crystallization-83%25-brightgreen?style=for-the-badge)
 
-> **Current Level:** 100% – вычислено командой `npm run crystal:avg`
+> **Current Level:** 83% – вычислено командой `npm run crystal:avg`
 
 > **Author:** Krishna Narayana (omkrishna.narayana@gmail.com)  
 > June 2025
@@ -15,6 +15,8 @@
 Каждая задача проходит через этапы "кристаллизации", на каждом из которых оценивается её совершенство по KPI, дорабатывается и фиксируется в истории.
 
 ### Основные идеи:
+
+**Пример практической кристаллизации**: внутри текущей задачи выполнено 10 итераций улучшения концепции с фиксацией KPI на каждом шаге. Полные значения см. в `crystallization.json`.
 - **Итерационный цикл:** Задачи проходят через этапы Backlog → In Progress → Review → Improvement → Crystallized.
 - **KPI-оценка:** На каждом этапе фиксируется уровень зрелости ("crystallization level") по выбранным метрикам.
 - **Рефлексия и самообновление ядра:** Принципы улучшения и KPI могут эволюционировать вместе с практикой.

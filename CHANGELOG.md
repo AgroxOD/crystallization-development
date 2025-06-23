@@ -34,3 +34,9 @@
 ## [0.3.2] - 2025-08-15
 ### Added
 - `CRYSTALLIZATION_PROTOCOL.md` with the first public specification
+
+## [0.3.3] - 2025-08-25
+### Added
+- Example 10-iteration improvement loop with KPI tracking in `crystallization.json`
+- Updated README badge to 83%
+

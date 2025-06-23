@@ -8,3 +8,4 @@
 - Diamond rule: tasks reaching all KPI thresholds get `diamond` status.
 - Use `crystal:init` to "crystallize" any repository with a starter `crystallization.json`.
 - Refer to `CRYSTALLIZATION_PROTOCOL.md` for the official specification.
+- This PR demonstrates a 10-iteration improvement loop with KPI tracking.
