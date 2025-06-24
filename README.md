@@ -159,6 +159,12 @@ curl https://api.github.com/repos/AgroxOD/crystallization-development/commits
 `UPDATE_REPOS`. Если в удалённом репозитории версия `core_version` ниже, чем в
 текущем проекте, файл будет автоматически перезаписан.
 
+### Upcoming `crystal:loop` script
+
+В планах реализовать команду `npm run crystal:loop`, которая будет запускать
+циклическое улучшение задачи в автоматическом режиме. Сейчас скрипт ещё
+отсутствует, но его появление запланировано в Roadmap.
+
 ---
 
 ## REST API Integration

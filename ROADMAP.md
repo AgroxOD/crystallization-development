@@ -46,3 +46,4 @@
 - [ ] Follow yearly action plan from `CORE.md`
 - [x] Implement auto-update script for outdated repos via GitHub API
 - [x] Provide curl example to fetch commit list via GitHub API
+- [ ] Implement `crystal:loop` script for automated iteration cycles
